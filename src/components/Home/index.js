@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
+import './home.css';
 
 class Home extends Component{
     state={
@@ -22,7 +23,7 @@ class Home extends Component{
     render(){
         console.log(this.state)
         return <h4><ul>{this.state.movies.map((m,i)=>(
-            <li><Link to={`/movies/${m.id}`}key={i}>{m.title}<br></br></Link><img src={`https://image.tmdb.org/t/p/original${m.poster_path}`} alt="movie poster" height="42" width="42"/></li>
+            <li><Link to={`/movies/${m.id}`}key={i}>{m.title}<br></br></Link><img class='image' src={`https://image.tmdb.org/t/p/original${m.poster_path}`} alt="movie poster" height="42" width="42"/></li>
         ))}</ul></h4>
     }
 }
