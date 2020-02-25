@@ -39,7 +39,7 @@ class App extends Component {
         <Route exact path='/signup' render={()=> <SignUp doSetCurrentUser={this.doSetCurrentUser}/>} />
         <Route exact path='/password-forget' component={PasswordForgetLink} />
         <Route exact path='/movies/search' component={MovieSearch}/>
-        <Route exact path='/movies/:id' component={MovieShow}/>
+        <Route exact path='/movies/:id' render={()=> <MovieShow user={this.state.currentUser}/>} />
       </Switch>
     </div>
     );
